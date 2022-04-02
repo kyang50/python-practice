@@ -1,0 +1,39 @@
+##################Fractions模块的基本用法
+>>> from fractions import Fraction
+>>> Fraction(16, -10)
+Fraction(-8, 5)
+>>> Fraction(123)
+Fraction(123, 1)
+>>> Fraction()
+Fraction(0, 1)
+>>> Fraction('3/7')
+Fraction(3, 7)
+>>> Fraction(' -3/7 ')
+Fraction(-3, 7)
+>>> Fraction('1.414213 \t\n')
+Fraction(1414213, 1000000)
+>>> Fraction('-.125')
+Fraction(-1, 8)
+>>> Fraction('7e-6')
+Fraction(7, 1000000)
+>>> Fraction(2.25)
+Fraction(9, 4)
+>>> Fraction(1.1)
+Fraction(2476979795053773, 2251799813685248)
+>>> from decimal import Decimal
+>>> Fraction(Decimal('1.1'))
+Fraction(11, 10)
+
+#########################寻找给定浮点数的有理逼近
+>>> from fractions import Fraction
+>>> Fraction('3.1415926535897932').limit_denominator(1000)
+Fraction(355, 113)
+
+#########################恢复表示为浮点数的有理数
+>>> from math import pi, cos
+>>> Fraction(cos(pi/3))
+Fraction(4503599627370497, 9007199254740992)
+>>> Fraction(cos(pi/3)).limit_denominator()
+Fraction(1, 2)
+>>> Fraction(1.1).limit_denominator()
+Fraction(11, 10)
